@@ -1,3 +1,6 @@
+/*Escribir un programa que permita calcular la diferencia entre dostiempos 
+t1 y t2 usando una estructura llamada Tiempo que contenga los datos de hora, 
+minuto y segundo.*/
 #include<stdio.h>
 struct Tiempo
 {
@@ -43,7 +46,7 @@ tiempo leerTiempo()
 	 return x;
 }
 
-//Función que devuelve la diferencia de los tiempos en forma de estructura
+//FunciÃ³n que devuelve la diferencia de los tiempos en forma de estructura
 tiempo diferenciaTiempo(tiempo y, tiempo z)
 {
 	int Tf, Ti, T;
