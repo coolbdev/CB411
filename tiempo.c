@@ -9,7 +9,7 @@ struct Tiempo
 	int segundo;
 };
 typedef struct Tiempo tiempo;
-/*Linea 8: Se define un tipo de dato tiempo para no usar la declaracion 
+/*Linea 11: Se define un tipo de dato tiempo para no usar la declaracion 
 struct Tiempo nombreVariable*/
 tiempo leerTiempo();
 
