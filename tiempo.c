@@ -1,6 +1,3 @@
-/*Escribir un programa que permita calcular la diferencia entre dostiempos 
-t1 y t2 usando una estructura llamada Tiempo que contenga los datos de hora, 
-minuto y segundo.*/
 #include<stdio.h>
 struct Tiempo
 {
@@ -9,8 +6,8 @@ struct Tiempo
 	int segundo;
 };
 typedef struct Tiempo tiempo;
-/*Linea 11: Se define un tipo de dato tiempo para no usar la declaracion 
-struct Tiempo nombreVariable*/
+/*Se usa typedef para utilizar la declaracion tiempo 
+en lugar de struct Tiempo*/
 tiempo leerTiempo();
 
 tiempo diferenciaTiempo(tiempo, tiempo);
@@ -20,14 +17,21 @@ tiempo diferenciaTiempo(tiempo, tiempo);
 	tiempo Ti;
 	tiempo Tf;
 	tiempo intervalo;
+	do{
+	printf("\nIngrese los tiempos en el formato de 24 horas\n");
+	printf("\n*************************************\n");
 	printf("Ingrese el tiempo de inicio\n");
 	Ti=leerTiempo();
+	
 	printf("\nIngrese el tiempo de finalizacion\n");
 	Tf=leerTiempo();
 	
-	printf("\n*************************************\n");
-	
 	intervalo = diferenciaTiempo(Tf, Ti);
+	printf("\n*************************************\n");
+	if(intervalo.hora < 0 || intervalo.minuto < 0 || intervalo.segundo < 0)
+		printf("Ingrese los datos correctos\n");
+	}while(intervalo.hora < 0 || intervalo.minuto < 0 || intervalo.segundo < 0);
+	
 	printf("%d | %d | %d\n", intervalo.hora, intervalo.minuto, intervalo.segundo);
 	return 0;
 }
@@ -36,13 +40,22 @@ tiempo diferenciaTiempo(tiempo, tiempo);
 tiempo leerTiempo()
 {
 	tiempo x;
-	//printf("Ingrese los datos que se piden a continuacion:\n");
-	printf("Hora:  " );
-	scanf("%d",&x.hora);
-	printf("Minuto: ");
- 	scanf("%d",&x.minuto);
- 	printf("Segundo:");
-	scanf("%d",&x.segundo);
+	//x.hora = 24;
+	x.minuto = 60;
+	x.segundo = 60;
+	do{
+		printf("Hora:  " );
+		scanf("%d",&x.hora);
+	}while(x.hora>=24||x.hora<0);
+	
+	do{
+		printf("Minuto: ");
+ 		scanf("%d",&x.minuto);
+	}while(x.minuto<0 || x.minuto>=60);
+ 	do{
+		printf("Segundo:");
+		scanf("%d",&x.segundo);
+	}while(x.segundo<0 || x.segundo>=60);
 	 return x;
 }
 
