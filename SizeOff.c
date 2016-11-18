@@ -1,8 +1,8 @@
 /*
 Escriba un programa que usa el operador sizeof para determinar 
-el tamaÒo en bytes de los diversos tipos de datos en su sistema 
-de computadora. Escriba los resultados al archivo ìdatos.txtî 
-usando el formato: tipo de dato - tamaÒo en bytes.
+el tama√±o en bytes de los diversos tipos de datos en su sistema 
+de computadora. Escriba los resultados al archivo ‚Äúdatos.txt‚Äù 
+usando el formato: tipo de dato - tama√±o en bytes.
 */
 #include<stdio.h>
 
@@ -11,7 +11,7 @@ int main()
 	printf("%d",5/2);
 	
 	
-	/*FILE* fichero;
+	FILE* fichero;
 	
 	fichero = fopen("datos.txt","w");//abre el fichero para escribir en el
 	fprintf(fichero, "Tipo de dato    | Tamanio en bytes");
@@ -23,6 +23,6 @@ int main()
 	fprintf(fichero,"\nlong            |  %d", sizeof(long));
 
 	fclose(fichero);//cierra el fichero para su posterior uso
-	*/
+	
 	return 0;
 }
