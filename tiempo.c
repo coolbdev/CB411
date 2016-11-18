@@ -28,21 +28,25 @@ tiempo diferenciaTiempo(tiempo, tiempo);
 	
 	intervalo = diferenciaTiempo(Tf, Ti);
 	printf("\n*************************************\n");
-	if(intervalo.hora < 0 || intervalo.minuto < 0 || intervalo.segundo < 0)
-		printf("Ingrese los datos correctos\n");
-	}while(intervalo.hora < 0 || intervalo.minuto < 0 || intervalo.segundo < 0);
+	if(intervalo.hora < 0)
+		{
+			printf("Datos incorrectos\n"); 
+			intervalo.hora=-1;
+		}
+		
+	else
+		printf("%d | %d | %d\n", intervalo.hora, intervalo.minuto, intervalo.segundo);
+	}while(intervalo.hora < 0 );
 	
-	printf("%d | %d | %d\n", intervalo.hora, intervalo.minuto, intervalo.segundo);
+	
 	return 0;
 }
 
-//Funcion de tipo struct que devuelve la misma estructura
+//Funcion de tipo struct que devuelve una estructura
 tiempo leerTiempo()
 {
 	tiempo x;
-	//x.hora = 24;
-	x.minuto = 60;
-	x.segundo = 60;
+	
 	do{
 		printf("Hora:  " );
 		scanf("%d",&x.hora);
